@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yamini Dasu — Senior Data Analyst</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    @font-face { font-family: 'Amoria'; src: url('AMORIA.otf') format('opentype'); }
+    @font-face { font-family: 'TimesNewRomance'; src: url('Times_New_Romance.otf') format('opentype'); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #fff; color: #111; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 2rem; border-bottom: 3px solid #111; background: #fff; position: sticky; top: 0; z-index: 10; }
+    .nav-issue { font-size: 11px; font-weight: 500; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 12px; font-weight: 500; color: #111; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links a:hover { color: #993556; }
+
+    .cover { background: #CECBF6; border-bottom: 3px solid #111; }
+    .cover-top { padding: 1.5rem 2rem 0.75rem; border-bottom: 1.5px solid #7F77DD; display: flex; justify-content: space-between; align-items: baseline; }
+    .cover-top .masthead { font-family: 'Amoria', serif; font-size: 15px; letter-spacing: 0.05em; color: #3C3489; }
+    .cover-top .tagline { font-size: 11px; color: #7F77DD; font-style: italic; }
+    .cover-main { padding: 1.5rem 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
+    .cover-vol { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #534AB7; margin-bottom: 0.5rem; }
+    .cover-name { font-family: 'Amoria', serif; font-size: 86px; line-height: 0.9; color: #26215C; margin-bottom: 0.75rem; }
+    .cover-name span { color: #993556; }
+    .cover-subhead { font-size: 14px; color: #3C3489; line-height: 1.6; max-width: 380px; margin-bottom: 1.25rem; border-left: 3px solid #993556; padding-left: 12px; }
+    .cover-btns { display: flex; gap: 10px; padding-bottom: 2rem; flex-wrap: wrap; }
+    .btn-a { background: #111; color: #CECBF6; padding: 10px 22px; border-radius: 2px; font-size: 12px; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .btn-a:hover { background: #333; }
+    .btn-b { background: #fff; color: #26215C; padding: 10px 22px; border-radius: 2px; font-size: 12px; font-weight: 500; text-decoration: none; border: 2px solid #26215C; letter-spacing: 0.05em; text-transform: uppercase; }
+    .btn-b:hover { background: #EEEDFE; }
+    .cover-toc { padding-bottom: 2rem; }
+    .toc-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #534AB7; margin-bottom: 0.75rem; }
+    .toc-item { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 0.5px solid #7F77DD; padding: 0.4rem 0; }
+    .toc-title { font-size: 13px; font-weight: 500; color: #26215C; }
+    .toc-pg { font-size: 11px; color: #7F77DD; font-style: italic; }
+
+    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 3px solid #111; }
+    .stat { padding: 1.25rem; border-right: 3px solid #111; }
+    .stat:last-child { border-right: none; }
+    .stat:nth-child(1) { background: #FAC775; }
+    .stat:nth-child(2) { background: #9FE1CB; }
+    .stat:nth-child(3) { background: #F4C0D1; }
+    .stat:nth-child(4) { background: #AFA9EC; }
+    .stat-num { font-family: 'TimesNewRomance', serif; font-size: 34px; color: #111; line-height: 1; font-style: italic; }
+    .stat-label { font-size: 11px; color: #333; margin-top: 4px; font-weight: 500; }
+
+    .section { padding: 2.5rem 2rem; border-bottom: 3px solid #111; }
+    .section-kicker { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #993556; margin-bottom: 0.25rem; }
+    .section h2 { font-family: 'TimesNewRomance', serif; font-size: 32px; color: #111; margin-bottom: 0.25rem; font-style: italic; }
+    .section-deck { font-size: 13px; color: #666; margin-bottom: 1.5rem; font-style: italic; border-bottom: 1.5px solid #e5e5e5; padding-bottom: 1rem; }
+
+    .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 3px solid #111; border-radius: 4px; overflow: hidden; }
+    .about-card { padding: 1.25rem; border-right: 3px solid #111; }
+    .about-card:last-child { border-right: none; }
+    .about-card:nth-child(1) { background: #FAECE7; }
+    .about-card:nth-child(2) { background: #E1F5EE; }
+    .about-card:nth-child(3) { background: #FBEAF0; }
+    .about-card:nth-child(4) { background: #EAF3DE; }
+    .about-icon { font-size: 20px; margin-bottom: 0.5rem; color: #111; }
+    .about-card h3 { font-size: 13px; font-weight: 500; color: #111; margin-bottom: 0.4rem; }
+    .about-card p { font-size: 12px; color: #444; line-height: 1.55; }
+
+    .skills-section { background: #111; }
+    .skills-section .section-kicker { color: #7F77DD; }
+    .skills-section h2 { color: #fff; }
+    .skills-section .section-deck { color: #666; border-color: #333; }
+    .skill-rows { display: flex; flex-direction: column; gap: 12px; }
+    .skill-row { display: flex; align-items: center; gap: 12px; }
+    .skill-label { font-size: 10px; font-weight: 500; color: #888; width: 90px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.08em; }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 2px; border: 2px solid; }
+    .pill.p { background: #AFA9EC; color: #26215C; border-color: #7F77DD; }
+    .pill.t { background: #5DCAA5; color: #04342C; border-color: #1D9E75; }
+    .pill.c { background: #F0997B; color: #4A1B0C; border-color: #D85A30; }
+    .pill.y { background: #FAC775; color: #412402; border-color: #EF9F27; }
+
+    .exp-section { background: #FAEEDA; }
+    .exp-section .section-deck { border-color: #e5c98a; }
+    .exp-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1.5px solid #e5c98a; }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem; }
+    .exp-title { font-family: 'TimesNewRomance', serif; font-size: 20px; color: #111; font-style: italic; }
+    .exp-date { font-size: 11px; font-weight: 600; background: #CECBF6; color: #26215C; padding: 3px 10px; border-radius: 2px; border: 1.5px solid #7F77DD; white-space: nowrap; }
+    .exp-co { font-size: 13px; color: #993556; font-weight: 600; margin-bottom: 0.6rem; }
+    .exp-bullets { padding-left: 1rem; }
+    .exp-bullets li { font-size: 13px; color: #444; line-height: 1.65; margin-bottom: 0.2rem; }
+
+    .pullquote { background: #CECBF6; border-left: 5px solid #993556; padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+    .pullquote p { font-family: 'TimesNewRomance', serif; font-size: 20px; font-style: italic; color: #26215C; line-height: 1.5; }
+    .pullquote cite { font-size: 12px; color: #534AB7; margin-top: 0.5rem; display: block; }
+
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .proj-card { border: 3px solid #111; border-radius: 4px; padding: 1.25rem; }
+    .proj-card:nth-child(1) { background: #E1F5EE; }
+    .proj-card:nth-child(2) { background: #EEEDFE; }
+    .proj-card:nth-child(3) { background: #f9f9f9; border-style: dashed; }
+    .proj-card:nth-child(4) { background: #f9f9f9; border-style: dashed; }
+    .proj-tag { font-size: 10px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .proj-card h3 { font-family: 'TimesNewRomance', serif; font-size: 18px; font-style: italic; margin-bottom: 0.4rem; color: #111; }
+    .proj-card p { font-size: 12px; color: #444; line-height: 1.55; }
+
+    .fun-section { background: #F4C0D1; }
+    .fun-section h2 { color: #4B1528; }
+    .fun-section .section-kicker { color: #72243E; }
+    .fun-section .section-deck { color: #72243E; border-color: #ED93B1; }
+    .fun-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .fun-card { background: #fff; border: 3px solid #111; border-radius: 4px; padding: 1.25rem; text-align: center; }
+    .fun-icon { font-size: 22px; color: #993556; margin-bottom: 0.5rem; }
+    .fun-card p { font-size: 12px; color: #444; line-height: 1.5; font-weight: 500; }
+
+    .contact-section { background: #26215C; }
+    .contact-section .section-kicker { color: #7F77DD; }
+    .contact-section h2 { color: #fff; }
+    .contact-section .section-deck { color: #7F77DD; border-color: #3C3489; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-card { border: 2px solid #3C3489; border-radius: 4px; padding: 1.25rem; }
+    .contact-card h3 { font-size: 11px; font-weight: 500; color: #7F77DD; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .contact-card a { font-size: 14px; color: #CECBF6; font-weight: 500; text-decoration: none; }
+    .contact-card a:hover { color: #fff; }
+
+    footer { background: #111; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid #993556; }
+    footer p { font-size: 11px; color: #666; letter-spacing: 0.06em; text-transform: uppercase; }
+    footer span { font-size: 11px; color: #444; font-style: italic; }
+
+    @media (max-width: 700px) {
+      .cover-main { grid-template-columns: 1fr; }
+      .cover-name { font-size: 56px; }
+      .about-grid { grid-template-columns: 1fr 1fr; }
+      .about-card { border-bottom: 3px solid #111; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .fun-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-issue">Vol. 1 · 2026 Edition</span>
+  <div class="nav-links">
+    <a href="#about">Who I am</a>
+    <a href="#work">My work</a>
+    <a href="#projects">My projects</a>
+    <a href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<div class="cover">
+  <div class="cover-top">
+    <span class="masthead">Yamini Dasu</span>
+    <span class="tagline">Making data look good since 2020 ✨</span>
+  </div>
+  <div class="cover-main">
+    <div class="cover-headline">
+      <div class="cover-vol">Senior Data Analyst · San Francisco Bay Area</div>
+      <div class="cover-name">Yamini<br><span>Dasu.</span></div>
+      <p class="cover-subhead">I build pipelines that scale, dashboards people actually use, and governance systems that survive FDA audits.</p>
+      <div class="cover-btns">
+        <a href="Yamini_Dasu_Resume.docx" class="btn-a">Download Resume</a>
+        <a href="https://linkedin.com/in/yaminidasu" target="_blank" class="btn-b">LinkedIn</a>
+      </div>
+    </div>
+    <div class="cover-toc">
+      <div class="toc-label">In this issue</div>
+      <div class="toc-item"><span class="toc-title">Meet me</span><span class="toc-pg">p. 01</span></div>
+      <div class="toc-item"><span class="toc-title">My toolkit</span><span class="toc-pg">p. 02</span></div>
+      <div class="toc-item"><span class="toc-title">My career so far</span><span class="toc-pg">p. 03</span></div>
+      <div class="toc-item"><span class="toc-title">Things I've built</span><span class="toc-pg">p. 04</span></div>
+      <div class="toc-item"><span class="toc-title">Off the clock</span><span class="toc-pg">p. 05</span></div>
+      <div class="toc-item"><span class="toc-title">Let's talk</span><span class="toc-pg">p. 06</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">80%</div><div class="stat-label">manual reporting I cut at Nevro</div></div>
+  <div class="stat"><div class="stat-num">35+</div><div class="stat-label">dashboards I built at Qualcomm</div></div>
+  <div class="stat"><div class="stat-num">20+</div><div class="stat-label">hours/week I saved via automation</div></div>
+  <div class="stat"><div class="stat-num">1</div><div class="stat-label">FDA audit passed, zero findings</div></div>
+</div>
+
+<div class="section" id="about">
+  <div class="section-kicker">p. 01 — Cover Story</div>
+  <h2>A little about me</h2>
+  <p class="section-deck">I'm a Senior Data Analyst who makes compliance look effortless and dashboards look good.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-icon"><i class="ti ti-database" aria-hidden="true"></i></div>
+      <h3>Data infrastructure</h3>
+      <p>I've built pipelines that scaled from 2TB to petabyte-level. I actually enjoy the unglamorous work of making data reliable.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+      <h3>Compliance + governance</h3>
+      <p>FDA audit? Passed. I turn regulatory requirements into scalable, auditable systems that hold up under scrutiny.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+      <h3>BI + dashboards</h3>
+      <p>I've built 35+ dashboards for 100+ global stakeholders. I care deeply about whether people actually use them.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+      <h3>[ your fun fact ]</h3>
+      <p>Add something personal here — a quirky fact, a strong opinion, something that makes you memorable.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section skills-section">
+  <div class="section-kicker">p. 02 — The Edit</div>
+  <h2>My toolkit</h2>
+  <p class="section-deck">The stack I actually know how to use.</p>
+  <div class="skill-rows">
+    <div class="skill-row"><span class="skill-label">Languages</span><div class="skill-pills"><span class="pill p">Python</span><span class="pill p">SQL</span></div></div>
+    <div class="skill-row"><span class="skill-label">BI Tools</span><div class="skill-pills"><span class="pill t">Tableau</span><span class="pill t">Power BI</span><span class="pill t">Excel</span></div></div>
+    <div class="skill-row"><span class="skill-label">Platforms</span><div class="skill-pills"><span class="pill c">Snowflake</span><span class="pill c">Databricks</span><span class="pill c">AWS</span><span class="pill c">GCP</span><span class="pill c">Azure</span></div></div>
+    <div class="skill-row"><span class="skill-label">Practices</span><div class="skill-pills"><span class="pill y">ETL Pipelines</span><span class="pill y">Data Governance</span><span class="pill y">KPI Development</span><span class="pill y">Audit Compliance</span></div></div>
+  </div>
+</div>
+
+<div class="section exp-section" id="work">
+  <div class="section-kicker">p. 03 — Career Retrospective</div>
+  <h2>My career so far</h2>
+  <p class="section-deck">Five years of pipelines, pivots, and petabytes.</p>
+
+  <div class="pullquote">
+    <p>"My data infrastructure held up under full FDA regulatory scrutiny. Zero findings."</p>
+    <cite>— Nevro Corp, 2024 Audit</cite>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-top"><span class="exp-title">Data Analyst — Windfall</span><span class="exp-date">Mar 2026 – Present</span></div>
+    <div class="exp-co">San Francisco Bay Area</div>
+    <ul class="exp-bullets">
+      <li>I'm building ETL pipelines and data governance workflows for people and donor wealth analytics.</li>
+      <li>I collaborate cross-functionally to standardize data definitions and improve reporting consistency.</li>
+    </ul>
+  </div>
+  <div class="exp-item">
+    <div class="exp-top"><span class="exp-title">Data Analyst — Nevro Corp</span><span class="exp-date">Jan 2024 – Jul 2025</span></div>
+    <div class="exp-co">San Francisco Bay Area</div>
+    <ul class="exp-bullets">
+      <li>I automated FDA regulatory pipelines, cutting prep time by 80% — from several weeks to under one week.</li>
+      <li>My data infrastructure passed a major FDA audit with zero findings.</li>
+      <li>I built 10–12 Tableau dashboards for 4–5 internal teams and executive stakeholders.</li>
+      <li>I defined 5–6 KPIs per month alongside Quality, Compliance, IT, and Ops teams.</li>
+    </ul>
+  </div>
+  <div class="exp-item">
+    <div class="exp-top"><span class="exp-title">Data Analyst — Qualcomm</span><span class="exp-date">Jul 2020 – Oct 2023</span></div>
+    <div class="exp-co">San Diego, CA</div>
+    <ul class="exp-bullets">
+      <li>I scaled ETL pipelines from ~2TB to petabyte-level on AWS and automated 20+ project onboardings per week.</li>
+      <li>I saved 20+ hours/week for 100+ team members by automating 35+ recurring reports.</li>
+      <li>I built 35+ Power BI dashboards for global ops teams across the US and India.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section" id="projects">
+  <div class="section-kicker">p. 04 — Featured Work</div>
+  <h2>Things I've built</h2>
+  <p class="section-deck">Projects that shipped, scaled, and survived audits.</p>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-tag">Compliance · Snowflake · Tableau</div>
+      <h3>FDA Regulatory Insights Automation</h3>
+      <p>I replaced multi-week manual compliance reporting with an automated ETL pipeline that held up through a full FDA audit.</p>
+    </div>
+    <div class="proj-card">
+      <div class="proj-tag">Power BI · Snowflake · KPIs</div>
+      <h3>Global Ops Performance Dashboard Suite</h3>
+      <p>I built a scalable Power BI suite on Snowflake for 100+ global ops users across the US and India.</p>
+    </div>
+    <div class="proj-card">
+      <div class="proj-tag" style="color:#aaa;">Coming soon</div>
+      <h3 style="color:#aaa;">My next project</h3>
+      <p style="color:#bbb;">A dataset I explored for fun, a side viz, a Kaggle deep dive — watch this space.</p>
+    </div>
+    <div class="proj-card">
+      <div class="proj-tag" style="color:#aaa;">Coming soon</div>
+      <h3 style="color:#aaa;">More to come</h3>
+      <p style="color:#bbb;">More from Windfall and wherever life takes me next.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section fun-section">
+  <div class="section-kicker">p. 05 — Off The Clock</div>
+  <h2>Beyond the data</h2>
+  <p class="section-deck">When I'm not wrangling pipelines, I'm probably doing one of these.</p>
+  <div class="fun-grid">
+    <div class="fun-card">
+      <div class="fun-icon"><i class="ti ti-needle-thread" aria-hidden="true"></i></div>
+      <p>I crochet — currently working on something ambitious</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon"><i class="ti ti-music" aria-hidden="true"></i></div>
+      <p>I Bollywood dance — yes, I can teach you the steps</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+      <p>[ Add one more thing that makes you, you ]</p>
+    </div>
+  </div>
+</div>
+
+<div class="section contact-section" id="contact">
+  <div class="section-kicker">p. 06 — Let's Talk</div>
+  <h2>I'd love to connect</h2>
+  <p class="section-deck">I'm open to new opportunities and I respond fast.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Email me</h3>
+      <a href="mailto:yaminisdasu@gmail.com">yaminisdasu@gmail.com</a>
+    </div>
+    <div class="contact-card">
+      <h3>Find me on LinkedIn</h3>
+      <a href="https://linkedin.com/in/yaminidasu" target="_blank">linkedin.com/in/yaminidasu</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Yamini Dasu · Vol. 1 · 2026</p>
+  <span>Making data look good since 2020</span>
+</footer>
+
+</body>
+</html>
