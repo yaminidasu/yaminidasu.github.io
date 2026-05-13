@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yamini Dasu — Senior Data Analyst</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
   <style>
     @font-face { font-family: 'Amoria'; src: url('AMORIA.otf') format('opentype'); }
-    @font-face { font-family: 'BebasNeue'; src: url('BebasNeue-Regular.otf') format('opentype'); }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #fff; color: #111; }
 
@@ -34,7 +37,7 @@
     .cover-toc { padding-bottom: 2rem; }
     .toc-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #534AB7; margin-bottom: 0.75rem; }
     .toc-item { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 0.5px solid #7F77DD; padding: 0.4rem 0; }
-    .toc-title { font-size: 13px; font-weight: 500; color: #26215C; }
+    .toc-title { font-size: 13px; font-weight: 500; color: #26215C; text-transform: uppercase; font-style: italic; }
     .toc-pg { font-size: 11px; color: #7F77DD;  }
 
     .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 3px solid #111; }
@@ -44,12 +47,12 @@
     .stat:nth-child(2) { background: #9FE1CB; }
     .stat:nth-child(3) { background: #F4C0D1; }
     .stat:nth-child(4) { background: #AFA9EC; }
-    .stat-num { font-family: 'BebasNeue', serif; font-size: 34px; color: #111; line-height: 1;  }
+    .stat-num { font-family: 'Bebas Neue', serif; font-size: 34px; color: #111; line-height: 1;  }
     .stat-label { font-size: 11px; color: #333; margin-top: 4px; font-weight: 500; }
 
     .section { padding: 2.5rem 2rem; border-bottom: 3px solid #111; }
     .section-kicker { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #993556; margin-bottom: 0.25rem; }
-    .section h2 { font-family: 'BebasNeue', serif; font-size: 32px; color: #111; margin-bottom: 0.25rem;  }
+    .section h2 { font-family: 'Bebas Neue', serif; font-size: 32px; color: #111; margin-bottom: 0.25rem;  }
     .section-deck { font-size: 13px; color: #666; margin-bottom: 1.5rem;  border-bottom: 1.5px solid #e5e5e5; padding-bottom: 1rem; }
 
     .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 3px solid #111; border-radius: 4px; overflow: hidden; }
@@ -82,14 +85,14 @@
     .exp-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1.5px solid #e5c98a; }
     .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem; }
-    .exp-title { font-family: 'BebasNeue', serif; font-size: 20px; color: #111;  }
+    .exp-title { font-family: 'Bebas Neue', serif; font-size: 20px; color: #111;  }
     .exp-date { font-size: 11px; font-weight: 600; background: #CECBF6; color: #26215C; padding: 3px 10px; border-radius: 2px; border: 1.5px solid #7F77DD; white-space: nowrap; }
     .exp-co { font-size: 13px; color: #993556; font-weight: 600; margin-bottom: 0.6rem; }
     .exp-bullets { padding-left: 1rem; }
     .exp-bullets li { font-size: 13px; color: #444; line-height: 1.65; margin-bottom: 0.2rem; }
 
     .pullquote { background: #CECBF6; border-left: 5px solid #993556; padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-    .pullquote p { font-family: 'BebasNeue', serif; font-size: 20px;  color: #26215C; line-height: 1.5; }
+    .pullquote p { font-family: 'Bebas Neue', serif; font-size: 20px;  color: #26215C; line-height: 1.5; }
     .pullquote cite { font-size: 12px; color: #534AB7; margin-top: 0.5rem; display: block; }
 
     .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -99,7 +102,7 @@
     .proj-card:nth-child(3) { background: #f9f9f9; border-style: dashed; }
     .proj-card:nth-child(4) { background: #f9f9f9; border-style: dashed; }
     .proj-tag { font-size: 10px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-    .proj-card h3 { font-family: 'BebasNeue', serif; font-size: 18px;  margin-bottom: 0.4rem; color: #111; }
+    .proj-card h3 { font-family: 'Bebas Neue', serif; font-size: 18px;  margin-bottom: 0.4rem; color: #111; }
     .proj-card p { font-size: 12px; color: #444; line-height: 1.55; }
 
     .fun-section { background: #F4C0D1; }
@@ -161,7 +164,7 @@
       <div class="cover-name">Yamini<br><span>Dasu.</span></div>
       <p class="cover-subhead">I build pipelines that scale, dashboards people actually use, and governance systems that survive FDA audits.</p>
       <div class="cover-btns">
-        <a href="Yamini_Dasu_Resume.docx" class="btn-a">Download Resume</a>
+        <a href="Yamini_Dasu_Resume.pdf" class="btn-a">Download Resume</a>
         <a href="https://linkedin.com/in/yaminidasu" target="_blank" class="btn-b">LinkedIn</a>
       </div>
     </div>
