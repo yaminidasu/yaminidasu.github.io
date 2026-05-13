@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <style>
     @font-face { font-family: 'Amoria'; src: url('AMORIA.otf') format('opentype'); }
-    @font-face { font-family: 'TimesNewRomance'; src: url('Times_New_Romance.otf') format('opentype'); }
+    @font-face { font-family: 'BebasNeue'; src: url('BebasNeue-Regular.otf') format('opentype'); }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #fff; color: #111; }
 
@@ -20,7 +20,7 @@
     .cover { background: #CECBF6; border-bottom: 3px solid #111; }
     .cover-top { padding: 1.5rem 2rem 0.75rem; border-bottom: 1.5px solid #7F77DD; display: flex; justify-content: space-between; align-items: baseline; }
     .cover-top .masthead { font-family: 'Amoria', serif; font-size: 15px; letter-spacing: 0.05em; color: #3C3489; }
-    .cover-top .tagline { font-size: 11px; color: #7F77DD; font-style: italic; }
+    .cover-top .tagline { font-size: 11px; color: #7F77DD;  }
     .cover-main { padding: 1.5rem 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
     .cover-vol { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #534AB7; margin-bottom: 0.5rem; }
     .cover-name { font-family: 'Amoria', serif; font-size: 86px; line-height: 0.9; color: #26215C; margin-bottom: 0.75rem; }
@@ -35,7 +35,7 @@
     .toc-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #534AB7; margin-bottom: 0.75rem; }
     .toc-item { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 0.5px solid #7F77DD; padding: 0.4rem 0; }
     .toc-title { font-size: 13px; font-weight: 500; color: #26215C; }
-    .toc-pg { font-size: 11px; color: #7F77DD; font-style: italic; }
+    .toc-pg { font-size: 11px; color: #7F77DD;  }
 
     .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 3px solid #111; }
     .stat { padding: 1.25rem; border-right: 3px solid #111; }
@@ -44,13 +44,13 @@
     .stat:nth-child(2) { background: #9FE1CB; }
     .stat:nth-child(3) { background: #F4C0D1; }
     .stat:nth-child(4) { background: #AFA9EC; }
-    .stat-num { font-family: 'TimesNewRomance', serif; font-size: 34px; color: #111; line-height: 1; font-style: italic; }
+    .stat-num { font-family: 'BebasNeue', serif; font-size: 34px; color: #111; line-height: 1;  }
     .stat-label { font-size: 11px; color: #333; margin-top: 4px; font-weight: 500; }
 
     .section { padding: 2.5rem 2rem; border-bottom: 3px solid #111; }
     .section-kicker { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #993556; margin-bottom: 0.25rem; }
-    .section h2 { font-family: 'TimesNewRomance', serif; font-size: 32px; color: #111; margin-bottom: 0.25rem; font-style: italic; }
-    .section-deck { font-size: 13px; color: #666; margin-bottom: 1.5rem; font-style: italic; border-bottom: 1.5px solid #e5e5e5; padding-bottom: 1rem; }
+    .section h2 { font-family: 'BebasNeue', serif; font-size: 32px; color: #111; margin-bottom: 0.25rem;  }
+    .section-deck { font-size: 13px; color: #666; margin-bottom: 1.5rem;  border-bottom: 1.5px solid #e5e5e5; padding-bottom: 1rem; }
 
     .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 3px solid #111; border-radius: 4px; overflow: hidden; }
     .about-card { padding: 1.25rem; border-right: 3px solid #111; }
@@ -82,14 +82,14 @@
     .exp-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1.5px solid #e5c98a; }
     .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem; }
-    .exp-title { font-family: 'TimesNewRomance', serif; font-size: 20px; color: #111; font-style: italic; }
+    .exp-title { font-family: 'BebasNeue', serif; font-size: 20px; color: #111;  }
     .exp-date { font-size: 11px; font-weight: 600; background: #CECBF6; color: #26215C; padding: 3px 10px; border-radius: 2px; border: 1.5px solid #7F77DD; white-space: nowrap; }
     .exp-co { font-size: 13px; color: #993556; font-weight: 600; margin-bottom: 0.6rem; }
     .exp-bullets { padding-left: 1rem; }
     .exp-bullets li { font-size: 13px; color: #444; line-height: 1.65; margin-bottom: 0.2rem; }
 
     .pullquote { background: #CECBF6; border-left: 5px solid #993556; padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-    .pullquote p { font-family: 'TimesNewRomance', serif; font-size: 20px; font-style: italic; color: #26215C; line-height: 1.5; }
+    .pullquote p { font-family: 'BebasNeue', serif; font-size: 20px;  color: #26215C; line-height: 1.5; }
     .pullquote cite { font-size: 12px; color: #534AB7; margin-top: 0.5rem; display: block; }
 
     .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -99,7 +99,7 @@
     .proj-card:nth-child(3) { background: #f9f9f9; border-style: dashed; }
     .proj-card:nth-child(4) { background: #f9f9f9; border-style: dashed; }
     .proj-tag { font-size: 10px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-    .proj-card h3 { font-family: 'TimesNewRomance', serif; font-size: 18px; font-style: italic; margin-bottom: 0.4rem; color: #111; }
+    .proj-card h3 { font-family: 'BebasNeue', serif; font-size: 18px;  margin-bottom: 0.4rem; color: #111; }
     .proj-card p { font-size: 12px; color: #444; line-height: 1.55; }
 
     .fun-section { background: #F4C0D1; }
@@ -123,7 +123,7 @@
 
     footer { background: #111; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid #993556; }
     footer p { font-size: 11px; color: #666; letter-spacing: 0.06em; text-transform: uppercase; }
-    footer span { font-size: 11px; color: #444; font-style: italic; }
+    footer span { font-size: 11px; color: #444;  }
 
     @media (max-width: 700px) {
       .cover-main { grid-template-columns: 1fr; }
@@ -206,8 +206,8 @@
     </div>
     <div class="about-card">
       <div class="about-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
-      <h3>[ your fun fact ]</h3>
-      <p>Add something personal here — a quirky fact, a strong opinion, something that makes you memorable.</p>
+      <h3>Serial Crochet Artist</h3>
+      <p>I crochet to relax. Something about the repetitive motions to create something that is useful and pretty scratches the same itch in my brain that data analysis does. Am I good at it? That's another question!</p>
     </div>
   </div>
 </div>
@@ -305,8 +305,8 @@
       <p>I Bollywood dance — yes, I can teach you the steps</p>
     </div>
     <div class="fun-card">
-      <div class="fun-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
-      <p>[ Add one more thing that makes you, you ]</p>
+      <div class="fun-icon"><i class="ti ti-target-arrow" aria-hidden="true"></i></div>
+      <p>I build Pokémon teams the same way I approach analysis: researching optimal combos, identifying the target, and reworking the whole thing until it's built to win. Only Gen 1-4 though!</p>
     </div>
   </div>
 </div>
