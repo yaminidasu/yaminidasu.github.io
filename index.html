@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yamini Dasu — Senior Data Analyst</title>
+  <title>By Yamini — Senior Data Analyst</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -145,7 +145,7 @@
 <body>
 
 <nav>
-  <span class="nav-issue">Vol. 1 · 2026 Edition</span>
+  <span class="nav-issue">By Yamini · Vol. 1 · 2026</span>
   <div class="nav-links">
     <a href="#about">WHO I AM</a>
     <a href="#work">MY WORK</a>
@@ -156,7 +156,7 @@
 
 <div class="cover">
   <div class="cover-top">
-    <span class="masthead">Yamini Dasu</span>
+    <span class="masthead">By Yamini</span>
     <span class="tagline">Making data look good since 2020 ✨</span>
   </div>
   <div class="cover-main">
@@ -172,7 +172,8 @@
       <div class="toc-item"><span class="toc-title">MY CAREER SO FAR</span><span class="toc-pg">p. 03</span></div>
       <div class="toc-item"><span class="toc-title">THINGS I'VE BUILT</span><span class="toc-pg">p. 04</span></div>
       <div class="toc-item"><span class="toc-title">OFF THE CLOCK</span><span class="toc-pg">p. 05</span></div>
-      <div class="toc-item"><span class="toc-title">LET'S TALK!</span><span class="toc-pg">p. 06</span></div>
+      <div class="toc-item"><span class="toc-title">FULLY VISUALIZED</span><span class="toc-pg">p. 06</span></div>
+      <div class="toc-item"><span class="toc-title">LET'S TALK!</span><span class="toc-pg">p. 07</span></div>
     </div>
   </div>
 </div>
@@ -311,6 +312,92 @@
   </div>
 </div>
 
+
+<div class="section viz-section">
+  <div class="section-kicker">p. 07 — The Data On Me</div>
+  <h2>Fully visualized</h2>
+  <p class="section-deck">Because what kind of data analyst would I be without charts about myself.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+
+    <div>
+      <p style="font-size:13px; font-weight:500; color:#993556; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">How I spend my time</p>
+      <p style="font-size:12px; color:#666; margin-bottom:16px;">A completely unbiased self-assessment.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#26215C;"><span style="width:10px;height:10px;border-radius:2px;background:#AFA9EC;display:inline-block;"></span>Work 30%</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#04342C;"><span style="width:10px;height:10px;border-radius:2px;background:#5DCAA5;display:inline-block;"></span>Sleep 35%</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#4A1B0C;"><span style="width:10px;height:10px;border-radius:2px;background:#F0997B;display:inline-block;"></span>Dance 15%</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#412402;"><span style="width:10px;height:10px;border-radius:2px;background:#FAC775;display:inline-block;"></span>Cute dog videos 20%</span>
+      </div>
+      <div style="position:relative;width:100%;height:240px;">
+        <canvas id="donutChart" role="img" aria-label="Donut chart: Work 30%, Sleep 35%, Dance 15%, Cute dog videos 20%">Work 30%, Sleep 35%, Dance 15%, Cute dog videos 20%</canvas>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size:13px; font-weight:500; color:#993556; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">My 2026 reading list</p>
+      <p style="font-size:12px; color:#666; margin-bottom:16px;">12 books and counting. Yes, 5 were Hunger Games. No regrets.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#26215C;"><span style="width:10px;height:10px;border-radius:2px;background:#AFA9EC;display:inline-block;"></span>Thriller 5</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#4B1528;"><span style="width:10px;height:10px;border-radius:2px;background:#ED93B1;display:inline-block;"></span>Dystopian 5</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#412402;"><span style="width:10px;height:10px;border-radius:2px;background:#FAC775;display:inline-block;"></span>Romance 2</span>
+      </div>
+      <div style="position:relative;width:100%;height:240px;">
+        <canvas id="booksChart" role="img" aria-label="Horizontal bar chart: Thriller 5 books, Dystopian 5 books, Romance 2 books">Thriller 5, Dystopian 5, Romance 2.</canvas>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('donutChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Work', 'Sleep', 'Dance', 'Cute dog videos'],
+    datasets: [{
+      data: [30, 35, 15, 20],
+      backgroundColor: ['#AFA9EC', '#5DCAA5', '#F0997B', '#FAC775'],
+      borderColor: ['#7F77DD', '#1D9E75', '#D85A30', '#EF9F27'],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '65%',
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.parsed + '%' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('booksChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Thriller', 'Dystopian', 'Romance'],
+    datasets: [{
+      data: [5, 5, 2],
+      backgroundColor: ['#AFA9EC', '#ED93B1', '#FAC775'],
+      borderColor: ['#7F77DD', '#D4537E', '#EF9F27'],
+      borderWidth: 2,
+      borderRadius: 3
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { beginAtZero: true, max: 7, ticks: { stepSize: 1, color: '#888780', font: { size: 12 } }, grid: { color: 'rgba(0,0,0,0.06)' } },
+      y: { ticks: { color: '#444441', font: { size: 13, weight: '500' } }, grid: { display: false } }
+    }
+  }
+});
+</script>
+
 <div class="section contact-section" id="contact">
   <div class="section-kicker">p. 06 — Let's Talk</div>
   <h2>I'd love to connect</h2>
@@ -332,7 +419,7 @@
 </div>
 
 <footer>
-  <p>Yamini Dasu · Vol. 1 · 2026</p>
+  <p>By Yamini · Vol. 1 · 2026</p>
   <span>Making data look good since 2020</span>
 </footer>
 
